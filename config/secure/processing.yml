@@ -1,0 +1,80 @@
+# Sensitive environment properties to be hosted by Spring Cloud Config Server can be placed here
+# Note, these should be encrypted with the appropriate prefix syntax. This file is usually populated
+# during execution of the `flex:generate` maven goal at the time of project construction when the
+# config server supporting component is enabled in the manifest. This file is generally placed into a
+# git repository which is referenced by Spring Cloud Config Server setup. See `config/README.adoc` for
+# more details.
+
+broadleaf:
+  sandbox:
+    preview:
+      decoder:
+        encoded-public-key: '{cipher}{key:version_1}AYB4ie+lruU0fDhLoSYpw0qK+Bsw4V1+YknUEnjnUfnrbK2a9NvNN0V69QAOsJWwtM7sTC8cAiO//vp9wFLj1KH4LmgMcD3UfkRULELVfpceyavJ92Tac6icUSm0i3l1pezDuNlw4mutgwkR08bov9nJNyaSMMBsmpWf/znZBQ5LWRw1WtQazuFNztz+kjWIIN7HENxfOSnQkB9PwGgHD6bg4WqbBAf6Efxf6fd4+oQirC3PU8KmvAHYGhhggRNnbWAbnwe7e76zvAnOwWMnFdlNK5Q8stgWug1qVFx23Hax0Nv01G8zZzIMN6hVFx8vmbHhiMGi9karb5uUyYN5GzUmsNHfTXMlmoYClyl+LHUYHCp2iqv8/nU7gehjbLVr6aOeg+XSLKNoDtC1zMp6vcHIGD+7nJi/ekGPyGsELodvckl1a51cdMlITe7DtIuixYg+EjOPDotXJxl2q4fgrJoPrkLeWHtCyZ2hA6d28msf1XtNKerNz6mbBuW9zKvB909c9gzBQ9FHHChdsldCImvszjkrdHp9zrVYFP9Z0WPnip0bWDpxW3juuozq2lPRdFy+86ttr6k8sMIjPdzo+6t/D2cCtxnAt+ydG9lrtbTniOCX6qtf27LrTtsLz+AfKTqyveoYLlDatQbkxdhBI9geOCRd8z8OFrAoUs7JWSgMKBnPuTb4UPSxOJuzuuNYkjO3+08NEflj9Xa7DCttmlY0+ipnzAp4fKytAKLx1xjaDtiiy4+SIPXEAau3dDhZcc6zPCWp0LYb4kw5YG9KGdnehd2JtzrUlMFT6Y6CJprvh4KBCp6aratsRvDGNZ1BBexK3w3UCc5rM3qoTPcK2giIs0h6VOGGgJl16pamiKy+a1JBTG7+R3+5Qsr6+XjqHiJluwaHaI+u81842Z4Fd/Uyom4J2cViNo/S3cAuOi+uFMtR+fD7rf4gMPXN/Qy7NauJKeLo+d7oNW5KMHnp3irdWTVaMbEVcuPhXUJdEy1SiCNEkGevXkaPorMtSvR0vtOkuvhfS6FAhowumnEYPTgiL1F/38C3svUz/mKP4r/ioQ=='
+  default:
+    spring:
+      cloud:
+        stream:
+          kafka:
+            binder:
+              configuration:
+                ssl:
+                  truststore:
+                    location: /var/keys/kafka-truststore.jks
+    java:
+      security:
+        auth:
+          login:
+            config: /var/keys/zk-kafka-client-jaas.conf
+    server:
+      ssl:
+        key-store: file:/var/keys/https-keystore.jks
+  search:
+    solr:
+      server:
+        indexer:
+          password: '{cipher}{key:version_1}AYBK0pIo8AxGeg1bOEG87f+GXz4+0jdDPjDhAun0gO8X8z15GCgb87NQCJaFj0FEXuWX95qHd3YktuT0VRzfGzSStWMW6XxxNENTxaTwR8KlGa5e1eH4KsKRLx41uJ77dJAeP2AYEDa/oLUffEuiJj/YDNjIxIZVEM9ta4y9hq1ACGbMgCbap8qrwc7R1jtAF7EJfIAVXTi0lSN6Nld2yMg6j2YwnCBQ973e2ck96CXvGR9Gx5QwHhQqypMfeU3avL1jjw54nN4ZaE7cLS4HR/ByfuRU5F9g5hJ3oMmnRfluM+j694LFgdAJRd65kkSbuZfrPHspqrYrWjZQg7cFsOz785m44G3GwVfUQakQMIAVEo/JjoW8TBq1ncXyeX5lX7o1Mxdtyznr/Rm4awaX8RdNbTxcRlIlVpFwGmQ/5bGe7o/bqK6maxBHmGrCkHfeYbwsUBTP4Nl5w9fuDMu5G9gHW0YrKdQ2XS4fZUwMue4jO6/1/E0j3tpP71QubWJZh30A/4zJPkFTeop0YksrE3yY7kXz7tRUwUkYZolax5c+Bme3XfBU/T/7gUeZKhwoofU='
+        searcher:
+          password: '{cipher}{key:version_1}AYBF5VWN34TNFGvQqw0h84vbCma3zrz/d8qhyx22XKc+N9NLbUBCvTFuydjD0QUqQ/XX1CjC52TjLy2MHrYQg2zlUw607ViE8thnVbxtKAJ1U+deCaMer8hk08+F8sZgXweLzLbAwATmO3JJaa6stTONQjUKficMNYvXiK3Vr1VD0B7XHYt2qlS0m9QJyA9ECNfKBdW4Tzq2JNdmGVOccvCrQua1cOOS8E5Ks3bXefLPkESMEUJP68xBUDUciMuxf0wB7fHlpzpv0ZW48vX8sCaSspV3uVrkwdHfAbnM8gpndgHGKxpH8G4gESpzlbg6Z/xEa+n4o4NAArlYj8tsa6+zjJ2tesvfmepPKHnsn/+GY+0jb4r3hY1VEa1oa6RDMqy90niYbn38vIPkMgLs7gy11aXuzgO/88r204mRS4xRCJ+CImw4Cc86oFvpExbmdubawszL+boEXFtDpuZrV8kycdZx4emXDQ+EozxSPrzvA5l+zklHS0tEW0yDj/jNTpX0eAcBIFIUYK/mLE48R7ShW3B1d96uKPcHGwQmTUZwnD3g2QEa0bRkpjAhYpiulfc='
+      zkAcl:
+        password: '{cipher}{key:version_1}AYBmWdNMnmJlPEGZ5Q7eAv1E+w5gkV10BGbqBHiUR3j4v08epSxOpd9hXFiPXQNrn2CHsawSEhNzi/SLOXxvKYgq3BAxkQyqpUWlVfUXulnWEH7uMe98OBW53cbCNfA13li414/8XqIb7UoiZA4vqQXu4l2wms452jM+11+8Z/eyKIMOyJr3HRLYD+KqvOlQEOEkBdF5Tf0HKbb0s3RHCf9yIlzX+ZaJOWgXMzPqdHH7BqZceLVYFzijHyZJaa8jDAFcTsuakNTq7CeJkW974sTQVg1cQPGc/RwLAI6kMZiEHhrZxMcySAqM1q1zVmrklv0pgzWg1dovmdD5UGpKukNrM1G3xARdQXVqVdhyMtBOm8dep8RZ36hi5Za4yUC80ssYEWX5d1ThCVSLDJeSmhXBXz+WexurIPxoOymr12os9IEHyPPDS3M3mFuE/l0Ff/dSXzFId942ikWaim87IlCZwkNNyOtW70T+pgh5gc7NT1jyiUUnHfYv4EPnnLn425b0tXAFsqyUFaJhE2mwPzM5f9N1N6nrL+g9XD+fzGlHCj12dlV8IsKkl/9BQVEvJ5Q='
+  datasource:
+    password: '{cipher}{key:version_1}AYBUOcDrufNf1S62Cr4nZyC7FybCFWI8gLbkOcvIqdhjoT5i92HG42VsvU43cBcSa8JKDA4eqAaLycBkdgP1fv81mHu+8x0KTsw7F89zbc3nTVUrp8QiBzP8ss5yRXaeQS+rx/MAwwBi5neirw2n7KhmUbAsmxImGSA2mbBFeAUIag+gkW6iUf8TkYZfv1afEw8ZOVNG5WTdnkPPTtRJb57lkNWgYkbwFDFOmwfwc6k7wXO0MMJYEM7L0sxaAg3oFrC/q4+NlisABC7pAI3BTOw9LGyQlH4rbc1bHv73X1orUbShPzkMPpUqUq7cbw1fqqEjLdrvZUxWJeERDK1vA8fg00KWvq7ArUWZ3JBEGKhC+mh3a0Yv0zT8LCbR9wStp5iuDSEZ6uSF8h4ezaYErgP0yWtpn3fCzc0v+FNoH8rAHAEmL6EtAPWgGWjwL5XY2ho5BENtIMqsLib78dyhhJQUjzPY0JUH7jRJtrfPznas5QaRohlep37dmWbQgAovuHevowoK7fUU9851A1gzyoYKUQM+aEtg5seM2GAMRMLSHzUnEK7+NgWonq70wWJzO+k='
+  composite:
+    datasource:
+      password: '{cipher}{key:version_1}AYBUOcDrufNf1S62Cr4nZyC7FybCFWI8gLbkOcvIqdhjoT5i92HG42VsvU43cBcSa8JKDA4eqAaLycBkdgP1fv81mHu+8x0KTsw7F89zbc3nTVUrp8QiBzP8ss5yRXaeQS+rx/MAwwBi5neirw2n7KhmUbAsmxImGSA2mbBFeAUIag+gkW6iUf8TkYZfv1afEw8ZOVNG5WTdnkPPTtRJb57lkNWgYkbwFDFOmwfwc6k7wXO0MMJYEM7L0sxaAg3oFrC/q4+NlisABC7pAI3BTOw9LGyQlH4rbc1bHv73X1orUbShPzkMPpUqUq7cbw1fqqEjLdrvZUxWJeERDK1vA8fg00KWvq7ArUWZ3JBEGKhC+mh3a0Yv0zT8LCbR9wStp5iuDSEZ6uSF8h4ezaYErgP0yWtpn3fCzc0v+FNoH8rAHAEmL6EtAPWgGWjwL5XY2ho5BENtIMqsLib78dyhhJQUjzPY0JUH7jRJtrfPznas5QaRohlep37dmWbQgAovuHevowoK7fUU9851A1gzyoYKUQM+aEtg5seM2GAMRMLSHzUnEK7+NgWonq70wWJzO+k='
+  resource:
+    security:
+      oauth2:
+        encodedpublickey: '{cipher}{key:version_1}AYC6hR2gaNFxCW320/D//WrQWAUNVoLfO4/S9JmqPUlzZrTlRMRiSVK4cFaVZlsPE8ToRwzn9XImbwKfMxSrJp/gYnD1qHXGTzDggd9XUkZqJMOLvQ2pk2Q6X1rWqRI1lsoTHC9Fm+WV1/5RMa5xB1dGXsIDd3ESVJsTseBjqoDLT94+l1kgUqKhGSfpDMiUZCZbT4ROB9CYveKxU4qKY5Rct4LM/CnMPwqYets0mTw3/QP1j7f4Am1E8iP75k5dSjEKleq5E383CtF9eye12/SEqf3KFOCmMnHYW6CB6i76ag/jjT2faunBp0kcF1313v0rQEAXzJmoGNfwqbknJXOU0FmAeOsoKpEEK65Dl5fViD9laa+Z1xknMCIgmgpVSSiMu3QtBNCdzWNyDrXD0M38Q9a+PGwVWk8+tn/mtKJ5932Vm1P4HrSi4so+tYCRxEPfFrgDNgyk1av/dz4+pXmeB/yuht5QoP9SeFM5x9/6kWNuZZZWlL+AcWjF1ZPXx5+dPGfofKxoPflaqWkmfqjtr/NPsW13lnm3R+h07y7+QhQo0dWhNv627RG7dbEfM9Ke9maX8bds0eTgS8Cor+4jvB1U6s2RxCVwqZiva8P/oLWdV4HqezXI2gWHQwycfO+dvVSWcq6CzSkuA1fVyYfT3vEahD9+C5rLrlOcQr968C2V7QGvc1BisJu1cW/HEuObfGwC3P+/ItrSQf5A4m8rPM7JIjYEfLwDDVsGWiWQoEsrobSOHcIGASmLYB9c5S9qkq0q20W2jCkSYB6jBMzHnFbC82Xfy3De+xjqX/KnrDqFV66qEuuvCEKEkMLdHfBRutYtD3qGfnaQIs9RAK6Gla1IyOF8JdA0uiiU8A3Nu6X7mCWCSAJr8xjRuqmOob9QUHTvAOhByxn2DwWfP9UD85LBkxqxvhOwiuKJAAfexZ6ILM8BYA2peQ8Svsfkd+QfYKddW34zh3/E+sXgXj45b42UpjAoQ+fi+ZOLWIfzrTHgcE8jDHWTI2vQZoIBbNZo4m2Emvy34SduQqV26EsV7s6HFB5SgUyf15z4c0qOhw=='
+        encodedpublickeys:
+          '1': '{cipher}{key:version_1}AYCurJsVADxRziULleej8NPX/lUAYVMzzH0ko9Lsm+GXCik8qhyBsCbL7nLd7CY9n3UhUilQQkIypVFPZjO1IzawkdR8U75ltgxF1cv1gFz0LUihH3pTks9JVIDEMshvFIuJM7MD7PUv42h421SLAE1bVBGaKTFg9QlAsx6q/8ExzDs6HNcnDLS/8rYtJjWq2wedS9nCnlnoj5sTzogcIWoTYf0NOQNbPlED+7ckqGVu3YNWsFjEZytjXB/anTkiakoUJyhFDGb/ezQgrmSVnRDQGgoXo2mZydP5oH6jkrwt3LKbUxSLvVCvVnD00gjabVDmERg8edRvsntAnowGPXJbNqUjStvtp4diJyGEyK3/AbP8WwDNAUyPwijyqZzxU1G25IrUjwUhxGlfbTOseodqD1oewG0/SJP3Fr7cuLajIwANCCfvGreINkh8ggFgfyC54465cOBRi/oHiLLIfLpnp+/eCDfZXYucavsAnvYZ+lwZREz6qWVMatriJkUQhcQjE1iUZP6mL7f80+lA1f5/2oIQeu6UuwJoSdV8XD+3WzyUw1zqZI+IQwnlQthMehG5w99SllQuhZdrYLHsy4ZwrxHVoCimZfIrf6yjBfIQE6NDdlYXrxtdSehABJvg61FOAmZ2astQGjkf0SlmauNU5RNVUI/KSjKjgFoHE7ZCsntJoNsr3InuIdzdzFv4i3jOoCN+5COsludfX5kUljTiTca/SJDN4rsgQWsQeviUyo1IMvp/qNcIOMX9GAGl//gftkbrKOxmTjYz+KP2vbJ9W/D+YEtngtEqfLFLS3YK7fIc7Vqezr63n7kRzF29wklPTppo91LIhkujrldYS4qT0w77p4O3YMLH9OXgQ23TNnpiaLgmAM8+QmJnihOy1sMzTk104Um5SfyLaBD+CnotN1ArOCyOvxlna3bt8A3YEaFsCyPxwi+dZqVKlmgESHZ+GslGpvMXW37Nah545C2fiJ3Bkjn7gopYZRIdKgIdrBniL+tRlRRfXxGJq9aXUNCt7Q3pw4h+79E2vbL8do0xtnDSyeekdRG6WVokRJXQ1A=='
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          configuration:
+            ssl:
+              truststore:
+                password: '{cipher}{key:version_1}AYAiYy240BEu/XbVGxqcnc9RDyXjwo+H+OAkg+nWW1YJlrKFqmqQi680Ncn0JJqbr3ZsE69HdSeJvi47XydeEmgPyBsWOvkModn2H9RL5w3RarTQx5huH6NXAt30i4dovjIRSQru7ZopGfGicCSPaonBxgULhfktl7FnHnTZNPKpnIJ2tkNwcz6VS737atYZCXEP9eRhkOIrL97bJAPOIbmKa7acmtP2MtX9fAxTXKlsjFcCC1+nDDybMfeV7TQu8SgWIXROctjeYrv7P3uGLJGvXFRObxtWcAmL2lGZNvFvEg03BNshvEm8JveBbjeFAGhUub9g4h88aporPKRaUaMkNW1DnBfcFcFBbcYJBy86yiXU6UvE8lvQGmXigcKJ9dPvLBR15R0DG4xFwqhAq5QOBfE+gXiopOkUMd0h3EJ/qyQ9MuFCdbXq0ZLuWXlPZ8dQFyDL77p37Pxpqp3yuiz8iBEJANdBBNAdsEzjK0FhblkuFpeNYq73Alu0blXuf3YnsY0H4h+/pFcjWyWOymB1XvXMkNHueYDYjGTmbirQ3K125u5BZ2YVk4AycqqGf4Q='
+            security:
+              protocol: SASL_SSL
+            sasl:
+              mechanism: PLAIN
+  security:
+    oauth2:
+      client:
+        registration:
+          indexerclient:
+            client-secret: '{cipher}{key:version_1}AYCpmWdl0OthNxxoqUljEn7jAFyEmfSpiDmZD1wGB1LDOhhavNkKE+vf07hRvotHKGQVdDihAi4+VojUr76trtNEp7MiqlElz7pEz38ATW/jQdn53ICS2zcJIuKCKVEN1Vss5m/h9ZOrozf34Oxwp0OCvN+uZUGoUTTatDrSnxAvFO8uejLtHpOvkc8LORGon8K+kO+toYGtarn3PG1zuEQsflEajcimHkaDLDQfpMYyZwoKVklNc8knsTHJ/UI5YzCKWJQ4ZbPyEou8vT0TrAZE5F/8AwaEpJQ1gic/EFEWfDB+uzA58hT1ko44FGsUtWd0ScAJJX0abspluN8Z/yveu3cNzZq62z6JNER7OHaNU4Rs5NkoK2eCzIa2WzWeMdD0ygYSy1Cus9cct2Owa6I68c6I5upzAARt28mtLLiOJOXJuJwR7Ff/jdb5kWMn71lnzc5KLmhMpqrE3EKicBvMPYf7HNZ80jHDjSK+I4CgmdZqBxF7x8TAWmYAMc2BeP/nVRoy8KffKwV04sNzKRXovW3k9LJfjp8ACTU9RO4DOJM64Hu4xeL1Qfbu+TuA6jU='
+          inventoryclient:
+            client-secret: '{cipher}{key:version_1}AYA5dDA00ONSdikG5/8ryycn1bk2LwypUWgNofDHnWKBOb57oNgo3NnqJ4mdwL/dpr8/pT6+wRADlMdCrKuveT0OWEvkVJTK1jtYn6Sr+zawVJD/0SMXQQ3DjaP/gTjd3/jCXoPtFcZWTWRxa8dowhks5A8GuU2m9cEH+VCuvt6rrEfTnjq3yp7a1sVlPxberxXBlhIXJirzpUyKGAgxSQ9Nx+oo4e22fBc8Tcy/d8N8hZbIMSjdtquJODX0V5oNOhro//wf/eAqBpzZFziDElTdPpL7Pb43C0ZfECOmDwez6byliEDvS9/72jzQjsESMp3XSAbw5jVYnE/FAigmFS/FoNQ8aLYLWiVOG0IOd9zzCZn7hb5uzx/b6cNDziRAL5i/4Ml9rAww922xmDr74GaxFtZx228q04ns6q/FYfqstY6iqs89fNA/X/DdyNBP69lA2FKnO5IWinixOzn31WaDb3ml6Kv3vxo8pdIK4KkkhOa93KAocRku4G1FKnDnRDJo8ehLyLLuCWqgEwDAFo/Lk9uPXJgxFx/JSmX7c5/iJbZBelzunmJY9mFUHXIyTJQ='
+          bulkopsclient:
+            client-secret: '{cipher}{key:version_1}AYBOHziG9UtyH5lwhjQD3i8ItoZS3g5SsHSlZQ9JtPM5Ph5qV1dCCWdzT9q/6zOwHx+qHblPNzqfT6poReqsQf+Qhu/FItD3LifSF9knbju25Ut3xE+lXbI5+lqCVwUZ4D23dVfkK7VTmHYMdpISw97oEMgjVZThNIg5GKZ4v0DvVnU4hcl1iEvt2kTfHIUJI5KsEOGIwRO+0oJbhlmDk7gCTU6d6LM0WXiT/lgmDB7NC0M/KDdJodOkhz2WqYU9ok6YMGGlRfsHrlFm3KuNx+r3VNxaxybhumm53Hm7OepYLbQpDOqgyfSC2bk5p+qu/M3cFYgRGGSlCBvn9b++EIOFyMu5QyXvf/hgnae8ziheoZGT78ladz6pZVeMJF7ZlPjRtNMqz5iVxX3J31F+rKeJA0W2oIw8YJC4+2u+93qR/uVUQzLxdrdIffzFF1pnnvwKGGXlDgiHDQR8FLVXE+hPnr2NhhtRefTIEUlOcV6S3snYKEr0O3aI6ns1wOCZQg7TgCoJVWR9VYkKt9vVanRALah2PuNhRvJP3EgF4H+H9Dk6rCi+ArGkyDlw/Ng+9hk='
+          searchclient:
+            client-secret: '{cipher}{key:version_1}AYA4XzqRtjBPju53XGVI1+n33rYmsTyGurd/1th0YVzOfOD8572+zkFVRaNU6QYUCgp6MvlxBoZanto6ArTVmQ6v+/covs1VpmMsQrFKcetG3Xejir/nxoRQjvbrUmFYeQHFL0Sk67/OcGXXZ90HZqh9rN0qUM8dGBVIzzexUjj3eBgB9TRm6iITT/dxbAScEN6I6XFb8/M2U2HkSChhppKRMVmb2zPmeDjGcOyV8Sm+c5WwYlxb4e9U41SLe9QUOIHLJA/ZubTXrAfI2BzUBryfvrmlu6ydLaK5Sivj6qqmBRaWOt2MBXwtBDv49+tb5IIaQs4WtV5qKkEJ6v88w8aOKdwHI4UJRbLDhXK65uv8ULbBcHpYKXVsf1D0Ee/TyUTQXELtO29FmXYuITVJfoTiQROT01FEccWaTl/Wl/1AlEU7xi9QRzDw6y05xSL8zSqk2VG14JM+Rzk9GVd2pBE6iLL4xUr0b6D32kcQxD0tv+Sf82DFvOmOryf9FGckmdsbceg1CXivFwe33vQDxs2spPANufv0E/BubSwF2OEmSrhSjZNgCVg8b1vROyLp0Ng='
+          customerclient:
+            client-secret: '{cipher}{key:version_1}AYBJl6/uA5GZ06sY/xqcadKNDovf/YUcYJtqQiVFrpdlv5fb1+s0pZAGvwYVDCrWbGrv6BqPzKRFYtyWk0bvVUntSDV6mCYrgHbsqqtJ1ODLo6KRl1MQyloXLowuj14sAptABZAu8s6m/uMPZI4YamjAZXAKd1epp/WaokCFJWcnB2GurJ3kSPCfH54Du56x7VstRD6T4OKTOTwebUkIah+S2YV5h//OqekjcBr4ym+FBuaWFbVWlQW3jB6pV8s42PQwW9m2hlc1nE79uF0MbtPWVllLP6jbKR1WA380+BlJVfV5yu29yqpNCPCKkjG+nCbQP8gMuK3Bsjfo4/STcVnd8WHTNJhfENkDaqsXvmsVlXpmU8BtNLeWCel28lDEik3DEgVGVPBY1atCv3UBTze22xznFx/0LCfx2fhk1V2XFb0AwRve2cbtJBdsqka1CmqB+Ht4ShYecpCHOH4qhNbfYXgZbpeB/YUs5CJ2ij6mMWwJWJiTfTtzhvEfvwz4T3/3FkYgHmuXhNta5unDekN/eCqEOtzOMxo20uMDMBj4ixDvMZR6A5CTLszLoDP8a6M='
+server:
+  ssl:
+    key-store-password: '{cipher}{key:version_1}AYAe5h4W4MyYqdCkGt2jBG4JfXojkx6ssAtzSrKgaxLvTrbyvGLMw7DErKEN0LZxDnmnf1kRuiH+x1DZ6v5do2w71wWovIOLurRdGnqNPLHfpNTD6udoNoJ8ekyMvarLD29WPxCvk/41h5axWH8+uXNDZO2ckxlValgb/daxIzZOBVMbvJqro2nQg3djwJN67FWch2E6fH6tF3xI0jyswnxPc/6OvUNFzwbuu8wsDj4Ke2nC6IoI1VjZTR2EEXS53XDVCl+toEBQSLZE4TWBEOjieKX2ahQrw+s1UkGGjr0HDUoSJq425dbVLRF+GR4sCXLYddua9rqBoA1N734hhtSjypqQz4UWlyiXxuS+c5Mo8B8s0l71SkL1S1/vSRqvBgOeIjgNAvnprNuvApYUn12HtMF0oKnRVXn/cBGaO39ZdurvuOgqX7BXDVlXYbX2p1m/tJgfKvLPQCqgKocU8k6j4iUPWQEq7wQhBp+kKgD9jopoHUNMBdfQNgt/fAG71lkBdBEXS9ZQK5AAOjVz/gfOA0DhBVzE3/qAKr3aqBfIk/g/tepyAPUs1/QT1AW0zZs='

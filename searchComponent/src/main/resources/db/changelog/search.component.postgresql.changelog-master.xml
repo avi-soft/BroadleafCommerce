@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?><databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"><preConditions><dbms type="postgresql"/></preConditions>
+    <!-- include the master baseline changelog from the services dependency JAR -->
+    <include file="db/changelog/search.starter.postgresql.changelog-master.yaml"/>
+    <!-- Client Schema Extensions Can Be Specified/Generated Below -->
+    <changeSet author="sai baba (generated)" id="1718353439448-1" labels="nonindex">
+        <dropIndex indexName="idxct8nsorwp8cqhaapv2w3ur2ic" tableName="blc_sort_group_sort"/>
+    </changeSet>
+    <changeSet author="sai baba (generated)" id="1718353439448-2" labels="nonindex">
+        <dropIndex indexName="idxnxkkmi752m3jcr33ravilcm87" tableName="blc_facet_group_facet"/>
+    </changeSet>
+</databaseChangeLog>

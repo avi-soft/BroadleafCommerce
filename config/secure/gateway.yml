@@ -1,0 +1,48 @@
+# Sensitive environment properties to be hosted by Spring Cloud Config Server can be placed here
+# Note, these should be encrypted with the appropriate prefix syntax. This file is usually populated
+# during execution of the `flex:generate` maven goal at the time of project construction when the
+# config server supporting component is enabled in the manifest. This file is generally placed into a
+# git repository which is referenced by Spring Cloud Config Server setup. See `config/README.adoc` for
+# more details.
+
+server:
+  ssl:
+    key-store-password: '{cipher}{key:version_1}AYC2Ycac1GCGRJdJchL/Ka4XA57CwWYwm2aD5AX/96eTVP13uj7jgGJc5y8Gl+Rs2aBvHDXW+bQsdwngLw/dJkks93m6dXkHcQRZ0QFlkxJ3+FQz+3cWR1tBNKL1HXwBOiahW31MmBKxvhJebhriNbfb1kI4biap/VIwGgb61bxFM/gPPJ9Mc/XPxlYeioBzos9+WSR4l+WCne4o0Tv7fvpGAcxOerdUcuxkG8ahN/EWOhj4e0MPi3buiSifAmYsWYBl8+TSJPD5781gqfDUCgyoLazd5swzakMrasriYoGuC58sKZWA+ogeIwOf4BygrWhi+sGCbAC8F7f1CGhjGum1SIDN6HZ0471OiSdV5QQIfzSMUmaO/PC8j1x9d1PXx7qIzmk0oKPkMwYV5sSgVpKoaWgG7SuMeOSAqEdwwdVdqEqTUgVveVqS9cIAUKA/3yLe3wPVfVt+1M+nSClqWzHEeVKqaYiDRrSX0/dLUJRHtGDTJhHvECV8pj+PF8R/YlWmaOJEIsEdvUvnGWRZOGNHMkyjveE4tlWBLAQM7wrwPtuW3/qIvGxG6w2h17OlvFg='
+broadleaf:
+  default:
+    server:
+      ssl:
+        key-store: file:/var/keys/https-keystore.jks
+    spring:
+      cloud:
+        stream:
+          kafka:
+            binder:
+              configuration:
+                ssl:
+                  truststore:
+                    location: /var/keys/kafka-truststore.jks
+    java:
+      security:
+        auth:
+          login:
+            config: /var/keys/zk-kafka-client-jaas.conf
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          configuration:
+            ssl:
+              truststore:
+                password: '{cipher}{key:version_1}AYABCfRrHODzcrGokj6ykvUaA52Ew5W4De+Lp3qvPBRf5FnHweERmx1MdD7vGiBKmgrMY6R9xXlPNPBmv/fGtmFP3PSjYwf74OS/0yJCmzECGJGvP6iJxVdjoCwouo/YSHtvIRj2JXPXxsbntx4puu5PRGtXLlmOdZNvvrGWz1jbOJmEmqeefUenIgZIFaufBOeJvmgaFMKYz5k2u2FbhBPe+UKHjPOFtekNvE7bdRlWMuCQkEdWCk45SgydQ5KuY72oXQ5Hkh34EUstpF9fMXufMKu5Wv5GjgsEiom9xf8D3+QINtqJR4WKfg5bPDwenBs7B6YfqUNovY+5XKK8Lkq1Kky5FO6whVZNGHasus9hENhYKKYJ2DIScEcJ5XMT5i1ix5VgG3rXaPbQsdtwciW+23ZdQMPQolDGzbMzfkECpGay1AOBksNxliGjx0M/8Mp38fvPOBGqu0ZvRCXgFvMfdNp++hZgKYpJPh7e0nQp8Cu+yC3ZgrFwqXqTUVTVqDFj+nHHPgyEs3P8T/UK9arI/eM95MF2AdfcQ3jDX64xah3fCNRUWs8DI4LsJNmB7XM='
+            security:
+              protocol: SASL_SSL
+            sasl:
+              mechanism: PLAIN
+  security:
+    oauth2:
+      client:
+        registration:
+          anonymous:
+            client-secret: '{cipher}{key:version_1}AYCvaQOImrXL1nlLtC9DmZVkYBkwIVs6Z04roI/XJ85SUQk9/G8lTfU+cePsd0o6VWDZzJuZ7tmx7qPCXTQ6BkWFvN4pUYeqKKHsJLGwy1ZIjhGLiUNpENwlGDvuXI05la5TZTB1uQEeamtG2VVk06yFrMR5u/8jYqIoeeF7VbkdrcugiIHonlTR4+yv7V1rnYgwdOhEUcvdE7jf6HB69DG31Z1blFzf4piSoXJD8DTZQgA81Y0TJ0vwQqb39Sv5nYif3tEmk3zvMGrzk++m9j1ogVEmKu+8/EDV+D1fIMu0KA/YWuXv4zGMfi/IgCT+j9VQbkC0a/4iejXWsyIjOl6t6kGBxNEIf9qH2l6J1BzzJC2hjTp/0I1NGQ0UhxB8969SW7vyZlos6iShMBr3MUP0iRlwLIFRAugCkocn83GQdBvPuP9Aq6dksp9huCfuFzt1QOlIyC/IK+2L17lB8NU5QgVyF2AtemoV8Z+w48WSGHx3slhxh6XQvtVoo9C6xihdR+WNm0LMnzG6eDEk1X2J3VH6uJpUgytuCqViuAtvt/vFXvIArfEcJNYLvL4KJk8='

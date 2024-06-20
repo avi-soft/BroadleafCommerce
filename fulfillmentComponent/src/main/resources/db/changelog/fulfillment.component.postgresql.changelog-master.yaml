@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/fulfillment.component.postgresql.changelog-master.xml
+  

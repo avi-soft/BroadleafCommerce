@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/sandbox.component.postgresql.changelog-master.xml
+  

@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/search.component.postgresql.changelog-master.xml
+  

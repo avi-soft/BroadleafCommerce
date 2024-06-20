@@ -116,7 +116,7 @@ public class MvelHelperTest extends TestCase {
     /**
      * Confirms repeated success for method overload workaround in SelectizeCollectionUtils
      * </p>
-     * See {@link #testMvelMethodOverloadFailureCase()} for a more complete description of the problem case.
+     * See {@link # testMvelMethodOverloadFailureCase()} for a more complete description of the problem case.
      */
     public void testMvelMethodOverloadWorkaroundCase() throws IOException {
         //Test multiple iterations to make sure we no longer fail at all

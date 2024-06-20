@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/shipping.component.postgresql.changelog-master.xml
+  

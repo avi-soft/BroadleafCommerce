@@ -42,7 +42,24 @@ public class AdminApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AdminApplication.class, args);
+        // Create an instance of JVMArgsPrinter and call printJVMArgs() method
+        JVMArgsPrinter printer = new JVMArgsPrinter();
+        printer.printJVMArgs();
     }
 
 }
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
+import java.util.List;
+
+public class JVMArgsPrinter {
+    public void printJVMArgs() {
+        RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+        List<String> jvmArgs = runtimeMxBean.getInputArguments();
+        System.out.println("JVM Arguments:");
+        for (String arg : jvmArgs) {
+            System.out.println(arg);
+        }
+    }
+}

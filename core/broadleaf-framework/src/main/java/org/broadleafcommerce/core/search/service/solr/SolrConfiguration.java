@@ -65,6 +65,7 @@ public class SolrConfiguration implements InitializingBean {
     //This is the name of the config that Zookeeper has associated with Solr configs
     protected String solrCloudConfigName = null;
 
+
     //This is the default number of shards that should be created if a SolrCloud collection is created via API
     protected Integer solrCloudNumShards = null;
 

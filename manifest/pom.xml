@@ -15,7 +15,7 @@
 	</parent>
 
 	<!-- Project coordinates -->
-	<groupId>com.example.microservices</groupId>
+	<groupId>com.avisoft.microservices</groupId>
 	<artifactId>microservice-flexpackage-manifest</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Sample Starter Project Manifest</name>

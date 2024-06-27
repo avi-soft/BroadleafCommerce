@@ -733,7 +733,7 @@ supporting:
     docker: zk
     local: localhost
   ports:
-    port: '2181'
+    port: '22181'
 extensions:
 - artifactId: broadleaf-microservices-starter-heatclinic
   groupId: com.broadleafcommerce.microservices

@@ -39,6 +39,7 @@
      */
     $(document).keypress(function(e) {
         activityCount++;
+        console.log(activityCount)
     });
 
 

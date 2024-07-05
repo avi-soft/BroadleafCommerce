@@ -1,7 +1,7 @@
 <blc_admin:admin_module resultVar="adminMenu" ></blc_admin:admin_module>
 
 <div class="side-nav">
-    <ul>
+    <ul class="nav">
         <li th:each="module : ${adminMenu.adminModules}" th:inline="text">
             <a th:class="${'nav-section ' + module.icon}" th:href="@{${'/overview'}}" th:if="${module.icon == 'blc-icon-blc-leaf'}"></a>
             <a th:class="${'nav-section ' + module.icon}" href="" th:attr="data-toggle=${'#' + module.moduleKey}"

@@ -380,6 +380,7 @@
             <classifier>jdk8</classifier>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>com.googlecode.htmlcompressor</groupId>
             <artifactId>htmlcompressor</artifactId>

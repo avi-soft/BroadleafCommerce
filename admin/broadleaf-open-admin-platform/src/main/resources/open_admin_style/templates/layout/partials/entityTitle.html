@@ -15,7 +15,7 @@
         </h4>
 
         <!-- Form for add new entity -->
-        <blc:form method="POST" id="add-entity-form" style="display:none;"></blc:form>
+        <blc:form method="POST" id="add-entity-form" style="display:none;" class="new"></blc:form>
 
         <!-- Dropdown button if more than one action -->
         <div th:if="${not #lists.isEmpty(mainActions) and (#lists.size(mainActions) > 1 or #lists.size(entityTypes) > 1)}" class="button-group">

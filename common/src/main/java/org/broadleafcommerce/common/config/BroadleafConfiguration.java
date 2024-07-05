@@ -27,18 +27,14 @@ import java.util.Map;
 @Configuration
 public class BroadleafConfiguration {
 
-    @Bean(name = "blMergedDataSources")
-    public Map<String, DataSource> dataSource() {
+    @Bean
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:file:/data/demo");
+        dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
+        dataSource.setUrl("jdbc:hsqldb:mem:testdb");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
-
-        Map<String, DataSource> dataSources = new HashMap<>();
-        dataSources.put("blPU", dataSource);
-
-        return dataSources;
+        return dataSource;
     }
 }
 

@@ -29,8 +29,7 @@
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="true"/>
-        <!--    <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
             <property name="hibernate.id.new_generator_mappings" value="true"/>
             <property name="hibernate.id.optimizer.pooled.prefer_lo" value="true"/>
         </properties>
@@ -42,8 +41,8 @@
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="false"/>
-            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+           <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+
             <property name="hibernate.id.new_generator_mappings" value="true"/>
             <property name="hibernate.id.optimizer.pooled.prefer_lo" value="true"/>
         </properties>
@@ -55,8 +54,8 @@
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="false"/>
-           <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+           <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+
             <property name="hibernate.id.new_generator_mappings" value="true"/>
             <property name="hibernate.id.optimizer.pooled.prefer_lo" value="true"/>
         </properties>
